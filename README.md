@@ -2,7 +2,7 @@
 Demo Website: https://wilddoctorweb.herokuapp.com/index.html<br>
 REST API Url: https://wilddoctorapi.herokuapp.com/wd/<br>
 a Web App Project of Plants Analysis by <a href="https://projectyuen.com">Anson Wong</a>.<br>
-For more detail of this project, please go to <a href="https://github.com/YuenHK/Will-Doctor">Github</a>.<p>
+For more detail of this project, please go to <a href="https://github.com/wcyhk/Will-Doctor">Github</a>.<p>
 [![Everything Is AWESOME](https://imgur.com/PpM74TY.png)](https://youtu.be/8zZCTYHU_6E "Everything Is AWESOME")
   
 # How to use this API?

@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YuenHK/Will-Doctor.git"
+    "url": "git+https://github.com/wcyhk/Will-Doctor.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YuenHK/Will-Doctor/issues"
+    "url": "https://github.com/wcyhk/Will-Doctor/issues"
   },
-  "homepage": "https://github.com/YuenHK/Will-Doctor#readme"
+  "homepage": "https://github.com/wcyhk/Will-Doctor#readme"
 }
