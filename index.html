@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>WILD DOCTOR</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="vendor/material-design-lite/material.grey-pink.min.css" />
     <link rel="stylesheet" href="styles.css" />
 
 
@@ -17,10 +17,10 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="vendor/material-design-lite/material.indigo-pink.min.css">
+    <script defer src="vendor/material-design-lite/material.min.js"></script>
     <link rel="icon" href="images/logo.png" />
-</head>
+<style>.divOut,.divIn{position:static;height:auto;margin:30px auto;max-width:880px}#img,#video{max-width:100%;max-height:380px;margin:20px auto}#ResultName{font-size:24px;font-weight:bold}#ResultDescription{white-space:pre-line;line-height:1.8;text-align:left}#loadingMDI{position:static;margin:16px auto}.privacy-note{padding:18px;color:#526458;line-height:1.8}</style></head>
 
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -33,17 +33,17 @@
             </div>
             <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
                 <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="index.html">Plant Analysis</a>
-                    <a class="mdl-navigation__link" href="about.html">About</a>
-                    <a class="mdl-navigation__link" href="contact.html">Contact</a>
+                    <a class="mdl-navigation__link is-active" href="index.html">植物辨識</a>
+                    <a class="mdl-navigation__link" href="about.html">關於</a>
+                    <a class="mdl-navigation__link" href="contact.html">聯絡</a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer mdl-layout--small-screen-only">
             <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="index.html">Plant Analysis</a>
-                <a class="mdl-navigation__link" href="about.html">About</a>
-                <a class="mdl-navigation__link" href="contact.html">Contact</a>
+                <a class="mdl-navigation__link is-active" href="index.html">植物辨識</a>
+                <a class="mdl-navigation__link" href="about.html">關於</a>
+                <a class="mdl-navigation__link" href="contact.html">聯絡</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -52,24 +52,25 @@
             <div class="divOut">
         <div class="divIn">
             <br>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="document.getElementById('uploadImage').click()">Seclect Image</button><br><br>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="document.getElementById('uploadImage').click()">選擇植物相片</button><br><br>
             <div class="strike">
                 <span>OR</span>
             </div>
-            <br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="snap">Take Image</button><br>
-            <input accept="image/*" id="uploadImage" type="file"><br>
+            <br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="snap">開啟鏡頭</button><br>
+            <input accept="image/jpeg,image/png" id="uploadImage" type="file"><br>
             <img id="img" src=""><br>
             <video id="video" autoplay></video><br>
             <canvas id="canvas" ></canvas><br>
-            <div id ="loadingMDI" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
-            <p id="ResultName" href="ResultName"></p>
+            <p class="privacy-note">上傳或拍照後，相片會送往百度植物辨識服務。本網站不保存相片。辨識結果只供學習及探索，不能用作食用或醫療判斷。</p><div id ="loadingMDI" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+            <p id="ResultName" role="status" aria-live="polite"></p>
             <p id="ResultDescription"></p>
         </div>
         </div>
         
         </main>
     </div>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="config.js"></script>
     <script src="js/index.js"></script>
 </body>
 

@@ -73,6 +73,6 @@
     }
 
 #handbg {
-    background-image: url("images/header-bg.jpg");
+    background-image: url("../images/header-bg.jpg");
     object-fit: cover;
 }

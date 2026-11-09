@@ -1,30 +1,25 @@
 {
   "name": "wilddoctor",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "a Web App Project of Plants Analysis",
-  "main": "index.html",
+  "main": "server.mjs",
   "engines": {
-    "node": "6.11.2"
+    "node": ">=22"
   },
-  "dependencies": {
-    "baidu-aip-sdk": "^2.1.0",
-    "firebase": "^4.12.1",
-    "restify": "^6.3.4",
-    "translation.js": "^0.6.8"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "node js/server.js",
-    "test": "mocha"
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wcyhk/Will-Doctor.git"
+    "url": "https://github.com/wcyhk/Wild-Doctor.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wcyhk/Will-Doctor/issues"
+    "url": "https://github.com/wcyhk/Wild-Doctor/issues"
   },
-  "homepage": "https://github.com/wcyhk/Will-Doctor#readme"
+  "homepage": "https://wcy.hk/Wild-Doctor/"
 }
