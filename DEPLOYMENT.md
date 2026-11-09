@@ -1,10 +1,10 @@
-# Wild Doctor 復修版
+# Wild Doctor 第三版
 
 網站支援選擇 JPEG／PNG 相片，以及使用現代瀏覽器鏡頭拍照。照片只在送出辨識時傳至百度；本站不儲存照片、不記錄照片內容。植物結果只供學習與探索。
 
 ## 本機啟動
 
-使用 Node.js 22 或以上版本，執行 `npm ci`、`npm test` 及 `npm start`，開啟 `http://localhost:3000`。
+使用 Node.js 24 或以上版本，執行 `npm ci`、`npm test` 及 `npm start`，開啟 `http://localhost:3000`。
 
 ## Render 服務
 

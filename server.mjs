@@ -4,7 +4,7 @@ import {dirname,resolve,extname,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const ROOT=dirname(fileURLToPath(import.meta.url));
 const MAX_BYTES=8*1024*1024;
-const MIME={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.ico':'image/x-icon'};
+const MIME={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.svg':'image/svg+xml','.ico':'image/x-icon'};
 
 export function createServer({apiKey=process.env.BAIDU_API_KEY,secretKey=process.env.BAIDU_SECRET_KEY,fetcher=fetch,clock=Date.now,dailyLimit=Number(process.env.DAILY_REQUEST_LIMIT)||100}={}){
  let token=null,tokenExpiry=0,tokenRequest=null;
@@ -42,6 +42,7 @@ export function createServer({apiKey=process.env.BAIDU_API_KEY,secretKey=process
     const image=typeof data.img==='string'?data.img:'';
     const match=/^data:image\/(jpeg|png);base64,([A-Za-z0-9+/=\r\n]+)$/.exec(image);
     if(!match)return reply(res,400,{error:'請上傳 JPEG 或 PNG 相片。'});
+    if(match[2].length>4*1024*1024)return reply(res,413,{error:'照片超過辨識服務上限，請先縮小再傳送。'});
     const bytes=Buffer.from(match[2],'base64');
     if(bytes.length>6*1024*1024)return reply(res,413,{error:'照片太大，請選擇 6 MB 以下的相片。'});
     const png=bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]));
@@ -61,7 +62,7 @@ export function createServer({apiKey=process.env.BAIDU_API_KEY,secretKey=process
    }
    if(req.method!=='GET'&&req.method!=='HEAD')return reply(res,405,{error:'不支援這個操作。'});
    const path=decodeURIComponent(url.pathname==='/'?'/index.html':url.pathname);
-   if(!(/^\/(?:index|about|contact)\.html$/.test(path)||/^\/(?:css|images|vendor)\/[\w./-]+$/.test(path)||['/js/index.js','/config.js','/styles.css'].includes(path)))return reply(res,404,{error:'找不到頁面。'});
+   if(!(/^\/(?:index|about|contact)\.html$/.test(path)||/^\/(?:css|images|vendor)\/[\w./-]+$/.test(path)||['/js/index.js','/js/app.mjs','/js/photo-model.mjs','/config.js','/styles.css'].includes(path)))return reply(res,404,{error:'找不到頁面。'});
    const file=resolve(ROOT,'.'+path);if(!file.startsWith(ROOT+sep))return reply(res,404,{error:'找不到頁面。'});
    if(!(await stat(file)).isFile())return reply(res,404,{error:'找不到頁面。'});
    res.writeHead(200,{'Content-Type':MIME[extname(file)]||'application/octet-stream','Cache-Control':'no-cache'});

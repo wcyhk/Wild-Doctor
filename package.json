@@ -1,10 +1,10 @@
 {
   "name": "wilddoctor",
-  "version": "2.0.0",
-  "description": "a Web App Project of Plants Analysis",
+  "version": "3.0.0",
+  "description": "Wild Doctor 植物探索手記：手機拍照、相片縮圖與植物辨識網頁",
   "main": "server.mjs",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "dependencies": {},
   "devDependencies": {},

@@ -1,77 +1,11 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A portfolio template that uses Material Design Lite.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>WILD DOCTOR</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="vendor/material-design-lite/material.grey-pink.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="vendor/material-design-lite/material.indigo-pink.min.css">
-    <script defer src="vendor/material-design-lite/material.min.js"></script>
-    <link rel="icon" href="images/logo.png" />
-<style>.divOut,.divIn{position:static;height:auto;margin:30px auto;max-width:880px}#img,#video{max-width:100%;max-height:380px;margin:20px auto}#ResultName{font-size:24px;font-weight:bold}#ResultDescription{white-space:pre-line;line-height:1.8;text-align:left}#loadingMDI{position:static;margin:16px auto}.privacy-note{padding:18px;color:#526458;line-height:1.8}</style></head>
-
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-            <div class="mdl-layout__header-row portfolio-logo-row" id="handbg">
-                <span class="mdl-layout__title">
-                    <div class="portfolio-logo"></div>
-                    <span class="mdl-layout__title">WILD DOCTOR</span>
-                </span>
-            </div>
-            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
-                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="index.html">植物辨識</a>
-                    <a class="mdl-navigation__link" href="about.html">關於</a>
-                    <a class="mdl-navigation__link" href="contact.html">聯絡</a>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="index.html">植物辨識</a>
-                <a class="mdl-navigation__link" href="about.html">關於</a>
-                <a class="mdl-navigation__link" href="contact.html">聯絡</a>
-            </nav>
-        </div>
-        <main class="mdl-layout__content">
-            <!-- here -->
-            
-            <div class="divOut">
-        <div class="divIn">
-            <br>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="document.getElementById('uploadImage').click()">選擇植物相片</button><br><br>
-            <div class="strike">
-                <span>OR</span>
-            </div>
-            <br><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="snap">開啟鏡頭</button><br>
-            <input accept="image/jpeg,image/png" id="uploadImage" type="file"><br>
-            <img id="img" src=""><br>
-            <video id="video" autoplay></video><br>
-            <canvas id="canvas" ></canvas><br>
-            <p class="privacy-note">上傳或拍照後，相片會送往百度植物辨識服務。本網站不保存相片。辨識結果只供學習及探索，不能用作食用或醫療判斷。</p><div id ="loadingMDI" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
-            <p id="ResultName" role="status" aria-live="polite"></p>
-            <p id="ResultDescription"></p>
-        </div>
-        </div>
-        
-        </main>
-    </div>
-
-    <script src="config.js"></script>
-    <script src="js/index.js"></script>
-</body>
-
-</html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#183d32"><title>Wild Doctor · 植物探索手記</title><meta name="description" content="拍下眼前的一片葉，展開植物探索。手機拍照、相片上傳與植物辨識。"><link rel="stylesheet" href="styles.css"><script src="config.js" defer></script><script src="js/app.mjs" type="module"></script></head><body>
+<a class="skip" href="#explore">跳至植物辨識</a><header><a class="brand" href="#">WILD DOCTOR<small>植物探索手記</small></a><nav><a href="#explore">開始探索</a><a href="#guide">觀察指南</a><a href="https://wcy.hk/">WCY.HK ↗</a></nav></header>
+<main><section class="hero"><div><p class="eyebrow">A FIELD GUIDE TO SMALL WONDERS</p><h1>從一片葉，<br>認識<span>另一個世界。</span></h1><p>放慢一步，看看身旁的綠意。<br>拍下植物，讓好奇心帶你走進自然。</p><a class="primary" href="#explore">展開探索 ↗</a><p class="fineprint">手機拍照 · 相片辨識 · 自然學習</p></div><span class="art-note">原創動漫概念插圖 · 實際辨識以相片為準</span></section>
+<section class="section" id="explore"><div class="heading"><div><p class="eyebrow">01 / OBSERVE & DISCOVER</p><h2>今天，發現了甚麼？</h2></div><span id="service-status" role="status">正在連接辨識服務…</span></div><div class="workspace">
+<div class="capture panel"><div class="panel-label"><span>植物觀察窗</span><span id="photo-info">相片尚未傳送</span></div><div class="viewfinder" id="dropzone"><img id="preview" alt="準備辨識的植物相片" hidden><video id="camera" autoplay playsinline muted hidden aria-label="即時鏡頭"></video><div id="empty-preview"><span class="leaf" aria-hidden="true">❧</span><h3>把自然放進畫框</h3><p>選擇相片，或開啟鏡頭<br>亦可以拖放 JPEG／PNG 圖片</p></div><span class="frame" aria-hidden="true"></span></div>
+<div class="actions"><button class="secondary" id="choose-photo">＋ 選擇相片</button><button class="secondary" id="open-camera">◎ 開啟鏡頭</button><button class="primary" id="take-photo" hidden>拍下這一刻</button><button class="text-button" id="close-camera" hidden>關閉鏡頭</button></div><input type="file" id="photo-file" accept="image/jpeg,image/png" hidden>
+<div class="submit-area"><label class="consent"><input type="checkbox" id="consent">我同意把這張植物相片傳至百度植物辨識服務。</label><div class="actions"><button class="primary" id="identify" disabled>辨識植物 ↗</button><button class="secondary" id="cancel" hidden>取消等候</button><button class="text-button" id="clear-photo" hidden>清除相片</button></div><p class="fineprint">相片會先在裝置內縮小並重新編碼；本站不保存相片。避免拍入人像、文件或私人資料。</p></div></div>
+<section class="result panel" aria-labelledby="result-title" aria-busy="false"><div class="panel-label"><span>EXPLORATION NOTES</span><span>探索結果</span></div><div id="result-area" aria-live="polite"><p class="result-star">✦</p><h3 id="result-title">每片葉，都有故事。</h3><p class="muted">加入一張光線充足、主體清晰的植物相片，準備開始辨識。</p><ol><li>選擇相片</li><li>確認並辨識</li><li>比較植物特徵</li></ol></div><div class="result-note">辨識結果是候選答案，並非確定鑑定。請核對葉形、花、莖及生長環境；切勿用作食用或醫療判斷。</div></section></div><p id="feedback" class="feedback" role="status"></p></section>
+<section class="section guide" id="guide"><p class="eyebrow">02 / BETTER PHOTOS, BETTER DISCOVERIES</p><h2>一張好相片，從觀察開始。</h2><div class="tips"><article><span>01</span><h3>讓主角清楚一點</h3><p>對準一種植物，靠近拍攝葉片或花朵。避免太遠、模糊或被遮擋的相片。</p></article><article><span>02</span><h3>換個角度，再核對</h3><p>拍下葉形、葉緣與花朵，從另一角度再試一次；相似的植物可能需要更多線索。</p></article><article><span>03</span><h3>帶走發現，留下自然</h3><p>保持距離，不採摘、不試食。探索是認識身邊的生命，也學習如何好好保護。</p></article></div></section>
+<section class="section"><div class="heading"><div><p class="eyebrow">03 / THIS VISIT</p><h2>這次的探索手記</h2></div><button id="clear-history" class="text-button" hidden>清除這次紀錄</button></div><p class="fineprint">只在本次頁面的記憶體保留結果名稱；不儲存相片、帳戶或位置，重新載入即清除。</p><div id="history" class="history"><p class="muted">第一個發現，正等着你。</p></div></section></main>
+<footer><a class="brand" href="https://wcy.hk/">WCY.HK STUDIO</a><span>WILD DOCTOR · 讓好奇心生長</span><a href="https://github.com/wcyhk/Wild-Doctor" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer></body></html>

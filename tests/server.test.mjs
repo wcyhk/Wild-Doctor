@@ -7,6 +7,8 @@ async function withServer(options,run){const s=createServer(options);s.listen(0,
 test('public site works without keys while identification reports configuration requirement',async()=>{
  await withServer({apiKey:'',secretKey:''},async origin=>{
   assert.equal((await fetch(origin+'/')).status,200);
+  assert.match((await fetch(origin+'/js/app.mjs')).headers.get('content-type'),/javascript/);
+  assert.match((await fetch(origin+'/images/explorer.webp')).headers.get('content-type'),/image\/webp/);
   assert.deepEqual(await(await fetch(origin+'/api/status')).json(),{ok:true,configured:false});
   const result=await fetch(origin+'/api/identify',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({img:image})});
   assert.equal(result.status,503);assert.ok((await result.json()).error.includes('未有傳送'));
